@@ -1,0 +1,120 @@
+{
+ "version": 1,
+ "updated": "2026-08-28",
+ "note": "PentaPad の «着信音の作り方». アプリが起動時に読む。GarageBand の画面が変わったらここを直して push する（アプリの再提出は不要）。",
+ "figs": {
+  "gbNew": "<svg viewBox=\"0 0 240 150\" role=\"img\">\n    <rect x=\"4\" y=\"4\" width=\"232\" height=\"142\" rx=\"10\" fill=\"#fff\" stroke=\"#DDD\"/>\n    <rect x=\"4\" y=\"4\" width=\"232\" height=\"26\" rx=\"10\" fill=\"#F2F2F5\"/>\n    <rect x=\"4\" y=\"20\" width=\"232\" height=\"10\" fill=\"#F2F2F5\"/>\n    <text x=\"16\" y=\"22\" font-size=\"10\" fill=\"#888\">My Songs</text>\n    <text x=\"206\" y=\"23\" font-size=\"16\" fill=\"#FF3CAC\" font-weight=\"bold\">+</text>\n    <circle cx=\"211\" cy=\"17\" r=\"12\" fill=\"none\" stroke=\"#FF3CAC\" stroke-width=\"2\"/>\n    <rect x=\"16\" y=\"44\" width=\"94\" height=\"60\" rx=\"8\" fill=\"#FFF0F8\" stroke=\"#FF3CAC\" stroke-width=\"2\"/>\n    <circle cx=\"63\" cy=\"68\" r=\"12\" fill=\"#FF3CAC\" opacity=\"0.25\"/>\n    <rect x=\"59\" y=\"60\" width=\"8\" height=\"14\" rx=\"4\" fill=\"#FF3CAC\"/>\n    <path d=\"M55 72a8 8 0 0016 0\" fill=\"none\" stroke=\"#FF3CAC\" stroke-width=\"2\"/>\n    <rect x=\"34\" y=\"88\" width=\"58\" height=\"6\" rx=\"3\" fill=\"#F3C4DE\"/>\n    <rect x=\"126\" y=\"44\" width=\"94\" height=\"60\" rx=\"8\" fill=\"#F7F7FA\" stroke=\"#E3E3EA\"/>\n    <rect x=\"146\" y=\"62\" width=\"54\" height=\"24\" rx=\"4\" fill=\"#E8E8EF\"/>\n    <circle cx=\"20\" cy=\"122\" r=\"9\" fill=\"#FF3CAC\"/><text x=\"20\" y=\"126\" font-size=\"11\" fill=\"#fff\" text-anchor=\"middle\">1</text>\n    <circle cx=\"211\" cy=\"17\" r=\"9\" fill=\"none\"/>\n    <circle cx=\"196\" cy=\"40\" r=\"9\" fill=\"#FF3CAC\"/><text x=\"196\" y=\"44\" font-size=\"11\" fill=\"#fff\" text-anchor=\"middle\">2</text>\n    <path d=\"M196 31l0-8\" stroke=\"#FF3CAC\" stroke-width=\"2\"/>\n    <path d=\"M20 113l0-10\" stroke=\"#FF3CAC\" stroke-width=\"2\"/>\n  </svg>",
+  "gbTracks": "<svg viewBox=\"0 0 240 150\" role=\"img\">\n    <rect x=\"4\" y=\"4\" width=\"232\" height=\"142\" rx=\"10\" fill=\"#fff\" stroke=\"#DDD\"/>\n    <rect x=\"4\" y=\"4\" width=\"232\" height=\"26\" rx=\"10\" fill=\"#F2F2F5\"/>\n    <rect x=\"4\" y=\"20\" width=\"232\" height=\"10\" fill=\"#F2F2F5\"/>\n    <rect x=\"14\" y=\"10\" width=\"16\" height=\"4\" rx=\"2\" fill=\"#FF3CAC\"/>\n    <rect x=\"14\" y=\"16\" width=\"16\" height=\"4\" rx=\"2\" fill=\"#FF3CAC\"/>\n    <circle cx=\"22\" cy=\"15\" r=\"13\" fill=\"none\" stroke=\"#FF3CAC\" stroke-width=\"2\"/>\n    <circle cx=\"120\" cy=\"88\" r=\"34\" fill=\"#F7F7FA\" stroke=\"#E3E3EA\"/>\n    <rect x=\"114\" y=\"72\" width=\"12\" height=\"22\" rx=\"6\" fill=\"#CFCFDA\"/>\n    <path d=\"M106 92a14 14 0 0028 0\" fill=\"none\" stroke=\"#CFCFDA\" stroke-width=\"3\"/>\n    <circle cx=\"52\" cy=\"52\" r=\"9\" fill=\"#FF3CAC\"/><text x=\"52\" y=\"56\" font-size=\"11\" fill=\"#fff\" text-anchor=\"middle\">1</text>\n    <path d=\"M43 48l-12-16\" stroke=\"#FF3CAC\" stroke-width=\"2\"/>\n  </svg>",
+  "gbLoop": "<svg viewBox=\"0 0 240 150\" role=\"img\">\n    <rect x=\"4\" y=\"4\" width=\"232\" height=\"142\" rx=\"10\" fill=\"#fff\" stroke=\"#DDD\"/>\n    <rect x=\"4\" y=\"4\" width=\"232\" height=\"26\" rx=\"10\" fill=\"#F2F2F5\"/>\n    <rect x=\"4\" y=\"20\" width=\"232\" height=\"10\" fill=\"#F2F2F5\"/>\n    <path d=\"M198 10c8 0 12 5 12 8s-5 7-11 7-9-3-9-6\" fill=\"none\" stroke=\"#FF3CAC\" stroke-width=\"2\"/>\n    <circle cx=\"203\" cy=\"15\" r=\"13\" fill=\"none\" stroke=\"#FF3CAC\" stroke-width=\"2\"/>\n    <rect x=\"20\" y=\"42\" width=\"200\" height=\"96\" rx=\"8\" fill=\"#fff\" stroke=\"#E3E3EA\"/>\n    <rect x=\"20\" y=\"42\" width=\"200\" height=\"22\" rx=\"8\" fill=\"#F7F7FA\"/>\n    <rect x=\"20\" y=\"56\" width=\"200\" height=\"8\" fill=\"#F7F7FA\"/>\n    <rect x=\"32\" y=\"48\" width=\"40\" height=\"9\" rx=\"4\" fill=\"#E3E3EA\"/>\n    <rect x=\"84\" y=\"48\" width=\"40\" height=\"9\" rx=\"4\" fill=\"#E3E3EA\"/>\n    <rect x=\"136\" y=\"46\" width=\"46\" height=\"13\" rx=\"6\" fill=\"#FF3CAC\"/>\n    <rect x=\"34\" y=\"76\" width=\"172\" height=\"12\" rx=\"4\" fill=\"#F2F2F5\"/>\n    <rect x=\"34\" y=\"96\" width=\"172\" height=\"12\" rx=\"4\" fill=\"#F2F2F5\"/>\n    <circle cx=\"203\" cy=\"15\" r=\"0\"/>\n    <circle cx=\"176\" cy=\"40\" r=\"9\" fill=\"#FF3CAC\"/><text x=\"176\" y=\"44\" font-size=\"11\" fill=\"#fff\" text-anchor=\"middle\">1</text>\n    <path d=\"M180 31l14-6\" stroke=\"#FF3CAC\" stroke-width=\"2\"/>\n    <circle cx=\"159\" cy=\"52\" r=\"9\" fill=\"#fff\" stroke=\"#FF3CAC\" stroke-width=\"2\"/><text x=\"159\" y=\"56\" font-size=\"11\" fill=\"#FF3CAC\" text-anchor=\"middle\">2</text>\n  </svg>",
+  "gbDrag": "<svg viewBox=\"0 0 240 150\" role=\"img\">\n    <rect x=\"4\" y=\"4\" width=\"232\" height=\"142\" rx=\"10\" fill=\"#fff\" stroke=\"#DDD\"/>\n    <rect x=\"20\" y=\"16\" width=\"200\" height=\"16\" rx=\"5\" fill=\"#FFF0F8\" stroke=\"#FF3CAC\" stroke-width=\"2\"/>\n    <rect x=\"30\" y=\"21\" width=\"60\" height=\"6\" rx=\"3\" fill=\"#FF3CAC\"/>\n    <rect x=\"20\" y=\"86\" width=\"200\" height=\"46\" rx=\"6\" fill=\"#F7F7FA\" stroke=\"#E3E3EA\"/>\n    <rect x=\"20\" y=\"86\" width=\"30\" height=\"46\" rx=\"6\" fill=\"#EDEDF2\"/>\n    <path d=\"M56 96h150M56 106h150M56 116h150\" stroke=\"#E3E3EA\" stroke-width=\"1\"/>\n    <path d=\"M110 40 L110 78\" stroke=\"#FF3CAC\" stroke-width=\"3\" stroke-dasharray=\"6 5\"/>\n    <path d=\"M104 72l6 10 6-10z\" fill=\"#FF3CAC\"/>\n    <circle cx=\"140\" cy=\"58\" r=\"9\" fill=\"#FF3CAC\"/><text x=\"140\" y=\"62\" font-size=\"11\" fill=\"#fff\" text-anchor=\"middle\">1</text>\n  </svg>",
+  "gbShare": "<svg viewBox=\"0 0 240 150\" role=\"img\">\n    <rect x=\"4\" y=\"4\" width=\"232\" height=\"142\" rx=\"10\" fill=\"#fff\" stroke=\"#DDD\"/>\n    <rect x=\"4\" y=\"4\" width=\"232\" height=\"26\" rx=\"10\" fill=\"#F2F2F5\"/>\n    <rect x=\"4\" y=\"20\" width=\"232\" height=\"10\" fill=\"#F2F2F5\"/>\n    <path d=\"M16 13l6 7 6-7\" fill=\"none\" stroke=\"#FF3CAC\" stroke-width=\"2.5\"/>\n    <circle cx=\"22\" cy=\"15\" r=\"13\" fill=\"none\" stroke=\"#FF3CAC\" stroke-width=\"2\"/>\n    <rect x=\"24\" y=\"48\" width=\"60\" height=\"60\" rx=\"8\" fill=\"#F7F7FA\" stroke=\"#FF3CAC\" stroke-width=\"2\"/>\n    <rect x=\"36\" y=\"66\" width=\"36\" height=\"24\" rx=\"4\" fill=\"#EDEDF2\"/>\n    <rect x=\"100\" y=\"46\" width=\"116\" height=\"88\" rx=\"8\" fill=\"#fff\" stroke=\"#E3E3EA\"/>\n    <rect x=\"110\" y=\"56\" width=\"70\" height=\"9\" rx=\"4\" fill=\"#F2F2F5\"/>\n    <rect x=\"110\" y=\"74\" width=\"96\" height=\"13\" rx=\"6\" fill=\"#FF3CAC\"/>\n    <rect x=\"110\" y=\"96\" width=\"70\" height=\"9\" rx=\"4\" fill=\"#F2F2F5\"/>\n    <rect x=\"110\" y=\"112\" width=\"70\" height=\"9\" rx=\"4\" fill=\"#F2F2F5\"/>\n    <circle cx=\"52\" cy=\"126\" r=\"9\" fill=\"#FF3CAC\"/><text x=\"52\" y=\"130\" font-size=\"11\" fill=\"#fff\" text-anchor=\"middle\">2</text>\n    <circle cx=\"52\" cy=\"34\" r=\"9\" fill=\"#fff\" stroke=\"#FF3CAC\" stroke-width=\"2\"/><text x=\"52\" y=\"38\" font-size=\"11\" fill=\"#FF3CAC\" text-anchor=\"middle\">1</text>\n    <circle cx=\"222\" cy=\"80\" r=\"9\" fill=\"#FF3CAC\"/><text x=\"222\" y=\"84\" font-size=\"11\" fill=\"#fff\" text-anchor=\"middle\">3</text>\n  </svg>"
+ },
+ "langs": {
+  "ja": {
+   "title": "着信音の作り方",
+   "steps": [
+    {
+     "title": "WAVファイルを保存する",
+     "fig": null,
+     "desc": "この画面の「端末に保存」をタップします。広告が流れるので最後まで見てください（「広告を消す」を購入済みなら流れません）。続けて共有シートが出るので「\"ファイル\"に保存」を選び、保存先に「ダウンロード」を選んで右上の「保存」をタップします。",
+     "tip": "ファイル名は PentaPad_ のあとに数字が付いた形です（例: PentaPad_1756312800000.wav）。共有シートを閉じてしまっても保存は済んでいて、「ファイル」アプリ →「ブラウズ」→「このiPhone内」→「PentaPad」から開けます。"
+    },
+    {
+     "title": "GarageBandを入れる",
+     "fig": null,
+     "desc": "App Storeを開き、下の「検索」タブで「GarageBand」と入力します。Apple製の無料アプリです。「入手」をタップしてインストールしてください。すでに入っている場合はこの手順は飛ばせます。",
+     "tip": "前に削除していても無料で入れ直せます。App Storeの右上のアイコン →「購入済み」から探せます。"
+    },
+    {
+     "title": "新しいプロジェクトを作る",
+     "fig": "gbNew",
+     "desc": "GarageBandを開きます。①右上の「＋」をタップします。楽器を選ぶ画面になるので、左右にスワイプして「オーディオレコーダー」（マイクの絵）を探し、②それをタップします。マイクの許可を聞かれたら「許可」で構いません。",
+     "tip": "録音はしません。オーディオレコーダーは、ファイルを読み込むための入り口として使うだけです。"
+    },
+    {
+     "title": "トラック表示に切り替える",
+     "fig": "gbTracks",
+     "desc": "ここが一番間違えやすいところです。録音画面のままでは音源を読み込めません。①画面の左上にある「横線が3本重なったボタン」をタップしてください。画面が切り替わり、左に楽器の列、右に方眼のタイムラインが並んだ画面になります。",
+     "tip": "切り替わったかどうかは、画面の右側に細かいマス目が出ているかで分かります。マイクの絵が大きく出ている間は、まだ切り替わっていません。"
+    },
+    {
+     "title": "ファイルを取り出す",
+     "fig": "gbLoop",
+     "desc": "①画面の右上にある「輪ゴムのような形のボタン」をタップします。上に3つのタブが出るので、②いちばん右の「ファイル」をタップします。「\"ファイル\"アプリから項目をブラウズ」をタップし、ステップ1で保存した PentaPad_数字.wav を探してタップしてください。",
+     "tip": "一覧に出てこないときは、ステップ1の保存ができていません。「ファイル」アプリを開いて、保存先か「このiPhone内」→「PentaPad」に PentaPad_数字.wav があるか確かめてください。"
+    },
+    {
+     "title": "タイムラインに置く",
+     "fig": "gbDrag",
+     "desc": "選んだファイルが一覧に出ます。①その名前を指で押さえたまま、下の方眼のタイムラインまでドラッグして、指を離してください。タップするだけでは入りません。緑色の帯が現れれば成功です。",
+     "tip": "うまく置けないときは、いちばん左端（先頭）を狙って離してください。位置は後からドラッグして直せます。"
+    },
+    {
+     "title": "着信音として書き出す",
+     "fig": "gbShare",
+     "desc": "①画面の左上の「∨」をタップし、「マイソング」を選びます。作品の一覧に戻ります。②いま作ったプロジェクトを長押しするとメニューが出るので、「共有」をタップします。③「着信音」を選び、名前を入れて右上の「書き出す」をタップしてください。",
+     "tip": "名前は「PentaPad」など短いものにしておくと、あとで設定アプリの一覧から見つけやすくなります。"
+    },
+    {
+     "title": "着信音に設定する",
+     "fig": null,
+     "desc": "ホーム画面の「設定」アプリを開きます。「サウンドと触覚」→「着信音」の順にタップしてください。リストのいちばん上に、いま書き出した名前が出ています。タップすると音が鳴り、選択されます。これで完了です。",
+     "tip": "同じ画面の「メッセージの通知音」を選べば、SMSの通知音にもできます。"
+    }
+   ]
+  },
+  "en": {
+   "title": "How to set your ringtone",
+   "steps": [
+    {
+     "title": "Save the WAV file",
+     "fig": null,
+     "desc": "Tap \"Save to Device\" on this screen. An ad plays — watch it to the end (it is skipped if you bought \"Remove Ads\"). The share sheet then opens: choose \"Save to Files\", pick a folder such as Downloads, and tap \"Save\" at the top right.",
+     "tip": "The file is named PentaPad_ followed by numbers (for example PentaPad_1756312800000.wav). Even if you dismiss the share sheet the file is already saved — open Files → Browse → On My iPhone → PentaPad to find it."
+    },
+    {
+     "title": "Install GarageBand",
+     "fig": null,
+     "desc": "Open the App Store, tap the Search tab at the bottom and type \"GarageBand\". It is a free Apple app. Tap \"Get\" to install it. Skip this step if you already have it.",
+     "tip": "You can reinstall it for free even if you deleted it before. Tap your profile icon at the top right of the App Store, then \"Purchased\"."
+    },
+    {
+     "title": "Create a new project",
+     "fig": "gbNew",
+     "desc": "Open GarageBand. ① Tap the \"+\" at the top right. The instrument picker appears — swipe sideways to find \"Audio Recorder\" (the microphone) and ② tap it. If it asks for microphone access, \"Allow\" is fine.",
+     "tip": "You are not going to record anything. Audio Recorder is only the doorway for importing a file."
+    },
+    {
+     "title": "Switch to the track view",
+     "fig": "gbTracks",
+     "desc": "This is the step people miss. You cannot import audio while the recording screen is showing. ① Tap the button at the top left that looks like three stacked bars. The screen changes to instrument rows on the left and a grid timeline on the right.",
+     "tip": "You will know it worked when a fine grid fills the right side of the screen. If a large microphone is still showing, you have not switched yet."
+    },
+    {
+     "title": "Open the file browser",
+     "fig": "gbLoop",
+     "desc": "① Tap the button at the top right shaped like a loop of rope. Three tabs appear — ② tap \"Files\" on the right. Tap \"Browse items from the Files app\" and find the PentaPad_ file you saved in step 1.",
+     "tip": "If it is not listed, step 1 did not finish. Open the Files app and check that the PentaPad_ file is in the folder you chose, or in On My iPhone → PentaPad."
+    },
+    {
+     "title": "Drag it onto the timeline",
+     "fig": "gbDrag",
+     "desc": "The file appears in the list. ① Press and hold its name, drag it down onto the grid timeline, and let go. Tapping alone will not import it. A green bar appears when it lands.",
+     "tip": "If it will not drop, aim for the far left edge of the timeline. You can drag it into position afterwards."
+    },
+    {
+     "title": "Export it as a ringtone",
+     "fig": "gbShare",
+     "desc": "① Tap the \"∨\" at the top left and choose \"My Songs\" to return to the project list. ② Press and hold the project you just made until a menu appears, then tap \"Share\". ③ Choose \"Ringtone\", give it a name and tap \"Export\" at the top right.",
+     "tip": "A short name like \"PentaPad\" is easier to spot later in the Settings list."
+    },
+    {
+     "title": "Set it as your ringtone",
+     "fig": null,
+     "desc": "Open the Settings app. Tap \"Sounds & Haptics\", then \"Ringtone\". The name you just exported sits at the top of the list. Tap it — it plays and is selected. Done.",
+     "tip": "Pick it under \"Text Tone\" on the same screen to use it for messages too."
+    }
+   ]
+  }
+ }
+}
