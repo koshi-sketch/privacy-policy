@@ -4,6 +4,7 @@
 # 各セッションは新しい Terminal ウィンドウで `claude --resume <id>` として開く。
 #   DAYS=7   … 何日以内に更新されたセッションを対象にするか
 #   MAX=10   … 候補の最大数
+#   ALL=1    … 選択画面を出さずに全部再開する（リモートから実行する時用）
 #   DRY_RUN=1 … 実行せずに開くコマンドを表示するだけ
 
 DAYS=${DAYS:-7}
@@ -47,7 +48,7 @@ if [ "$n" -eq 0 ]; then
   exit 0
 fi
 
-if [ -n "$DRY_RUN" ]; then
+if [ -n "$DRY_RUN" ] || [ -n "$ALL" ]; then
   chosen=$(printf '%s\n' "${labels[@]}")
 else
   chosen=$(osascript - "${labels[@]}" <<'OSA'
