@@ -2,17 +2,34 @@
 # Claude 復帰ボタン
 # 最近の Claude Code セッションをまとめて再開する。ダブルクリックで実行。
 # 各セッションは新しい Terminal ウィンドウで `claude --resume <id>` として開く。
-#   DAYS=7   … 何日以内に更新されたセッションを対象にするか
+#   DAYS=30  … 何日以内に更新されたセッションを対象にするか
 #   MAX=10   … 候補の最大数
 #   ALL=1    … 選択画面を出さずに全部再開する（リモートから実行する時用）
 #   DRY_RUN=1 … 実行せずに開くコマンドを表示するだけ
 
-DAYS=${DAYS:-7}
+DAYS=${DAYS:-30}
 MAX=${MAX:-10}
 PROJECTS="$HOME/.claude/projects"
+LOG="$HOME/Library/Logs/claude-resume.log"
+mkdir -p "$(dirname "$LOG")"
+exec 2>>"$LOG"
+echo "=== $(date) ===" >&2
+
+# 結果を必ず画面に出す（ウィンドウがすぐ閉じても分かるように）
+say() {
+  echo "$1"
+  echo "$1" >&2
+  [ -n "$DRY_RUN" ] && return
+  osascript - "$1" >/dev/null <<'OSA'
+on run argv
+  activate
+  display dialog (item 1 of argv) with title "Claude 復帰" buttons {"OK"} default button 1
+end run
+OSA
+}
 
 if [ ! -d "$PROJECTS" ]; then
-  echo "セッションが見つかりません: $PROJECTS"
+  say "セッションが見つかりません: $PROJECTS"
   exit 1
 fi
 
@@ -44,7 +61,8 @@ done < <(find "$PROJECTS" -mindepth 2 -maxdepth 2 -name '*.jsonl' -mtime -"$DAYS
            -exec stat -f '%m %N' {} + 2>/dev/null | sort -rn | cut -d' ' -f2-)
 
 if [ "$n" -eq 0 ]; then
-  echo "再開できるセッションはありません（実行中のものは除外しています）。"
+  say "再開できるセッションがありません（${DAYS}日以内・実行中を除く）。
+DAYS=60 などで期間を広げられます。"
   exit 0
 fi
 
@@ -53,6 +71,7 @@ if [ -n "$DRY_RUN" ] || [ -n "$ALL" ]; then
 else
   chosen=$(osascript - "${labels[@]}" <<'OSA'
 on run argv
+  activate
   set r to choose from list argv with title "Claude 復帰" with prompt "再開するセッションを選んでください（全部選択済み）" default items argv OK button name "再開" with multiple selections allowed
   if r is false then return ""
   set AppleScript's text item delimiters to linefeed
@@ -60,6 +79,12 @@ on run argv
 end run
 OSA
 )
+  st=$?
+  if [ $st -ne 0 ]; then
+    say "選択画面を出せませんでした（エラー $st）。
+ログ: $LOG"
+    exit 1
+  fi
 fi
 
 [ -z "$chosen" ] && exit 0
@@ -72,6 +97,7 @@ while IFS= read -r line; do
     echo "$cmd"
     continue
   fi
+  echo "open: $cmd" >&2
   osascript - "$cmd" >/dev/null <<'OSA'
 on run argv
   tell application "Terminal"
@@ -88,4 +114,4 @@ if [ -z "$DRY_RUN" ] && ! pgrep -x caffeinate >/dev/null; then
   nohup caffeinate -i -t 43200 >/dev/null 2>&1 &
 fi
 
-echo "再開しました。このウィンドウは閉じて大丈夫です。"
+say "$(printf '%s\n' "$chosen" | grep -c .) 件のセッションを再開しました。"
