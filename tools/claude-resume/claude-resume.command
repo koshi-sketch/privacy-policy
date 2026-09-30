@@ -1,7 +1,8 @@
 #!/bin/bash
 # Claude 復帰ボタン
 # 最近の Claude Code セッションをまとめて再開する。ダブルクリックで実行。
-# 各セッションは新しい Terminal ウィンドウで `claude --resume <id>` として開く。
+# 各セッションは新しい Terminal ウィンドウで `claude --resume <id> --remote-control` として開き、
+# スマホの Claude アプリの元のセッションにつなぎ直す。
 #   DAYS=30  … 何日以内に更新されたセッションを対象にするか
 #   MAX=10   … 候補の最大数
 #   ALL=1    … 選択画面を出さずに全部再開する（リモートから実行する時用）
@@ -92,7 +93,7 @@ fi
 while IFS= read -r line; do
   i=$((10#${line%%  *} - 1))
   dir=${dirs[$i]}
-  cmd="cd '${dir//\'/\'\\\'\'}' && claude --resume ${ids[$i]}"
+  cmd="cd '${dir//\'/\'\\\'\'}' && claude --resume ${ids[$i]} --remote-control"
   if [ -n "$DRY_RUN" ]; then
     echo "$cmd"
     continue
