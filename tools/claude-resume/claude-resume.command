@@ -4,12 +4,12 @@
 # 各セッションは新しい Terminal ウィンドウで `claude --resume <id> --remote-control` として開き、
 # スマホの Claude アプリの元のセッションにつなぎ直す。
 #   DAYS=30  … 何日以内に更新されたセッションを対象にするか
-#   MAX=10   … 候補の最大数
+#   MAX=20   … 候補の最大数
 #   ALL=1    … 選択画面を出さずに全部再開する（リモートから実行する時用）
 #   DRY_RUN=1 … 実行せずに開くコマンドを表示するだけ
 
 DAYS=${DAYS:-30}
-MAX=${MAX:-10}
+MAX=${MAX:-20}
 PROJECTS="$HOME/.claude/projects"
 LOG="$HOME/Library/Logs/claude-resume.log"
 mkdir -p "$(dirname "$LOG")"
